@@ -11,7 +11,7 @@ def load():
 
 df = load()
 
-st.title('Project title')
+st.title('E-COMMERCE DATA ANALYSIS')
 
 if st.sidebar.checkbox("View Dataset"):
     st.dataframe(df)
