@@ -1,0 +1,16 @@
+streamlit
+pandas
+plotly
+numpy
+scipy
+openpyxl
+pillow
+scikit-learn
+statsmodels
+seaborn
+nltk
+spacy
+xgboost
+textblob 
+IProgress 
+joblib
