@@ -33,13 +33,13 @@ st.plotly_chart(fig)
 
 customer_msn = (df['CustomerID'].isna().sum() / len(df['CustomerID'])) * 100
 description_msn = (df['Description'].isna().sum() / len(df['CustomerID'])) * 100
-st.info('{:.2f}%, {:.2f}%'.format(customer_msn,description_msn))
+
 
 df.drop(df[df['CustomerID'].isna() | df['Description'].isna()].index, inplace=True)
 df.drop(df.query('Country == "Unspecified"').index, inplace=True)
 df = df.astype({'InvoiceDate':'datetime64[ns]','CustomerID':'int'})
 
-qty = st.number_input("find item by quantity", min_value=-100, max_value=100)
+qty = st.number_input("find item by quantity", min_value=-1000, max_value=1000, value=0)
 st.dataframe(df.query(f'Quantity > {qty}'))
 
 df.drop(df.query('Description in ["POSTAGE", "CARRIAGE", "Discount", "DOTCOM POSTAGE", "CRUK Commission", "Manual"]').index, axis=0, inplace=True)
